@@ -13,6 +13,11 @@ Private, offline Android budgeting and bill-reminder app.
 - Mark-paid action and payment history
 - Upcoming and overdue bill status
 - Notifications restored after the phone restarts
+- Local PDF bank-statement import with transaction review
+- Duplicate transaction protection during repeated imports
+- Automatic category suggestions and likely recurring-bill detection
+- Delete controls for accounts, transactions, budgets, bills, and payment records
+- Material 3 light and dark themes
 - Local-only SQLite storage; no internet permission, login, analytics, or bank connection
 
 ## Build and install
@@ -25,6 +30,14 @@ Private, offline Android budgeting and bill-reminder app.
 6. Allow notifications when prompted. If Android asks for **Alarms & reminders** access, allow it for precise bill timing.
 
 To create an installable file, use **Build > Build App Bundles or APKs > Build APKs**. The debug APK appears under `app/build/outputs/apk/debug/`.
+
+### Build without Android Studio
+
+Push this folder to GitHub. The included workflow builds automatically. Open the repository's **Actions** tab, select the completed **Build Android APK** run, and download the `PocketLedger-debug-apk` artifact.
+
+### PDF import limitations
+
+The importer handles text-based statements with common date/description/amount rows. Scanned image-only PDFs require OCR and are intentionally rejected. Always review detected credits, debits, categories, and recurring bills before importing.
 
 ## Privacy note
 
