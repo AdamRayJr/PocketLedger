@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -32,6 +33,7 @@ private val Green=Color(0xFF0F766E)
 private val money=NumberFormat.getCurrencyInstance()
 private val dateFmt=SimpleDateFormat("MMM d, yyyy",Locale.getDefault())
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable fun PocketLedgerApp() {
     val context=LocalContext.current
     val db=remember { LedgerDb(context) }
