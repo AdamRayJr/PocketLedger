@@ -64,7 +64,7 @@ else
     which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH."
 fi
 
-if "$cygwin" || "$msys" ; then
+if [ "${cygwin:-false}" = "true" ] || [ "${msys:-false}" = "true" ] ; then
     APP_HOME=$( cygpath --path --mixed "$APP_HOME" )
     CLASSPATH=$( cygpath --path --mixed "$CLASSPATH" )
     JAVACMD=$( cygpath --unix "$JAVACMD" )
